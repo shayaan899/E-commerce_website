@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enhanced Product Page</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="single-product">
+      <div class="row">
+        <!-- Gallery -->
+        <div class="col-6">
+          <div class="product-image">
+            <div class="product-image-main">
+              <img src="assets/tshirt-1.png" alt="Main product" id="product-main-image">
+            </div>
+            <div class="product-image-thumbnails" id="thumb-container">
+              <!-- Thumbnails injected via JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Details -->
+        <div class="col-6">
+          <div class="breadcrumb">
+            <span><a href="#">Home</a></span>
+            <span><a href="#">Product</a></span>
+            <span class="active">T-shirt</span>
+          </div>
+
+          <div class="product">
+            <h2 class="product-title">Half Sleeve T-Shirt for Men</h2>
+
+            <!-- Tabs -->
+            <div class="tabs">
+              <button class="tab-btn active" data-tab="desc">Description</button>
+              <button class="tab-btn" data-tab="info">Product Information</button>
+              <button class="tab-btn" data-tab="ship">Shipping Details</button>
+            </div>
+            <div class="tab-content" id="desc">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <div class="tab-content hidden" id="info">
+              <ul>
+                <li>Material: 100% Cotton</li>
+                <li>Care: Machine wash</li>
+              </ul>
+            </div>
+            <div class="tab-content hidden" id="ship">
+              <p>Ships within 3-5 business days. Free returns within 30 days.</p>
+            </div>
+
+            <!-- Size & Chart -->
+            <div class="product-size">
+              <h4>
+                Size
+                <button id="size-chart-btn" class="size-chart-btn">Size Chart</button>
+              </h4>
+              <select id="size-select">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+              </select>
+            </div>
+
+            <!-- Color Variants -->
+            <div class="product-color">
+              <h4>
+                Color
+                <button id="compare-colors-btn" class="compare-colors-btn">Compare Colours</button>
+              </h4>
+              <div class="color-swatches" id="swatch-container">
+                <!-- Swatches injected via JS -->
+              </div>
+            </div>
+
+            <span class="divider"></span>
+
+            <div class="product-btn-group">
+              <button id="buy-now" class="button buy-now">
+                <i class='bx bxs-zap'></i> Buy Now
+              </button>
+              <button id="add-cart" class="button add-cart">
+                <i class='bx bxs-cart'></i> Add to Cart
+              </button>
+              <button id="add-wish" class="button heart">
+                <i class='bx bxs-heart'></i> Add to Wishlist
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pair Well With -->
+      <section class="pair-well-with">
+        <h3>Pair Well With</h3>
+        <div class="recommendations" id="recommendations"></div>
+      </section>
+
+      <!-- Bundle Suggestion -->
+      <section class="bundle">
+        <h3>Buy These Together</h3>
+        <div class="bundle-cards" id="bundle-cards"></div>
+        <div class="bundle-summary">
+          <span id="bundle-total"></span>
+          <button id="add-bundle" class="button buy-now">Add Bundle to Cart</button>
+        </div>
+      </section>
+
+      <!-- Related Products -->
+      <section class="related-products">
+        <h3>Related Products</h3>
+        <div class="related-grid" id="related-grid"></div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Modals -->
+  <div class="modal hidden" id="size-chart-modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="size-chart-close">&times;</button>
+      <h4>Size Chart</h4>
+      <table>
+        <tr><th>Size</th><th>Chest (in)</th><th>Length (in)</th></tr>
+        <tr><td>S</td><td>34-36</td><td>28</td></tr>
+        <tr><td>M</td><td>38-40</td><td>29</td></tr>
+        <tr><td>L</td><td>42-44</td><td>30</td></tr>
+        <tr><td>XL</td><td>46-48</td><td>31</td></tr>
+        <tr><td>XXL</td><td>50-52</td><td>32</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="compare-colors-modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="compare-colors-close">&times;</button>
+      <h4>Compare Colours</h4>
+      <div id="compare-swatches" class="compare-swatches"></div>
+      <button id="do-compare" class="button buy-now" style="margin-top:1rem;">Compare</button>
+      <div id="compare-result" class="compare-result" style="margin-top:1rem; display:flex; gap:10px;"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
